@@ -14,22 +14,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayInput: UITextView!
     var paddingLabel = PaddingLabel(frame: CGRect(x: 50, y: 120, width: 300, height: 50))
     
-    var numberOne : Int?
-    var numberTwo:Int?
+    var numberOne = ""
+    var numberTwo = ""
     var summe:Int?
     var ops: String?
     
-    func setLabel(value : Int){
+    func setLabel(value : String){
         
         do{
-            if(numberOne != nil){
-                numberTwo = value
+            if(ops != nil){
+                numberTwo = numberTwo + String(value)
                 if(ops == nil) {throw("Error")}
                 
-                paddingLabel.text = "\(numberOne!) \(ops!) \(numberTwo!)"
+                paddingLabel.text = numberOne + ops! + numberTwo
             }else{
-                numberOne = value
-                paddingLabel.text = String(numberOne!)
+                numberOne =  numberOne + String(value)
+                paddingLabel.text = numberOne
             }
         }catch{
             paddingLabel.text = "FORMAT falsch: zahl, ops, zahl, equal"
@@ -37,48 +37,48 @@ class ViewController: UIViewController {
     }
     
     func setOps(opss : String){
-        paddingLabel.text = "\(numberOne!) \(opss)"
+        paddingLabel.text = "\(numberOne) \(opss)"
         ops = opss
     }
     
     //Number Buttons
     @IBAction func n0(_ sender: UIButton) {
-        setLabel(value: 0)
+        setLabel(value: "0")
     }
     
     @IBAction func n1(_ sender: UIButton) {
-        setLabel(value: 1)
+        setLabel(value: "1")
     }
     
     @IBAction func n2(_ sender: UIButton) {
-        setLabel(value: 2)
+        setLabel(value: "2")
     }
     
     @IBAction func n3(_ sender: UIButton) {
-        setLabel(value: 3)
+        setLabel(value: "3")
     }
     
     @IBAction func n4(_ sender: UIButton) {
-        setLabel(value: 4)
+        setLabel(value: "4")
     }
     @IBAction func n5(_ sender: UIButton) {
-        setLabel(value: 5)
+        setLabel(value: "5")
     }
     
     @IBAction func n6(_ sender: UIButton) {
-        setLabel(value: 6)
+        setLabel(value: "6")
     }
     
     @IBAction func n7(_ sender: UIButton) {
-        setLabel(value: 7)
+        setLabel(value: "7")
     }
     
     @IBAction func n8(_ sender: UIButton) {
-        setLabel(value: 8)
+        setLabel(value: "8")
     }
     
     @IBAction func n9(_ sender: UIButton) {
-        setLabel(value: 9)
+        setLabel(value: "9")
     }
     
     @IBAction func calcPlus(_ sender: UIButton) {
@@ -98,30 +98,33 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clear(_ sender: UIButton) {
-        paddingLabel.text = "0"
+        paddingLabel.text = ""
         ops = nil
-        numberOne = nil
-        numberTwo = nil
+        numberOne = ""
+        numberTwo = ""
     }
     
     @IBAction func equal(_ sender: UIButton) {
+        let num1 = Int(numberOne)!;
+        let num2 = Int(numberTwo)!;
+        
         switch ops {
         case "+":
-            summe = numberOne! + numberTwo!
+            summe = num1 + num2
             break
         case "-":
-            summe = numberOne! - numberTwo!
+            summe = num1 - num2
             break
         case "*":
-            summe = numberOne! * numberTwo!
+            summe = num1 * num2
             break
         case "/":
-            summe = numberOne! / numberTwo!
+            summe = num1 / num2
             break
         default:
             paddingLabel.text = "ERROR"
         }
-        numberOne = summe
+        numberOne = String(summe!)
         paddingLabel.text = String(summe!)
     }
     
@@ -130,7 +133,7 @@ class ViewController: UIViewController {
         
         paddingLabel.center = CGPoint(x: 200, y: 120)
         paddingLabel.textAlignment = .center
-        paddingLabel.text = "0"
+        paddingLabel.text = ""
         paddingLabel.backgroundColor = UIColor(red: 0, green: 119, blue: 204, alpha: 1)
         
         self.view.addSubview(paddingLabel)
