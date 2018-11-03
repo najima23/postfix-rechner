@@ -15,6 +15,7 @@
 		C769DEA72185C210005B5F40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C769DEA52185C210005B5F40 /* LaunchScreen.storyboard */; };
 		C769DEB22185C210005B5F40 /* Postfix_RechnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769DEB12185C210005B5F40 /* Postfix_RechnerTests.swift */; };
 		C769DEBD2185C210005B5F40 /* Postfix_RechnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769DEBC2185C210005B5F40 /* Postfix_RechnerUITests.swift */; };
+		C769DECB2185D034005B5F40 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769DECA2185D034005B5F40 /* PaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C769DEB82185C210005B5F40 /* Postfix-RechnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Postfix-RechnerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C769DEBC2185C210005B5F40 /* Postfix_RechnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Postfix_RechnerUITests.swift; sourceTree = "<group>"; };
 		C769DEBE2185C210005B5F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C769DECA2185D034005B5F40 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				C769DE992185C20F005B5F40 /* AppDelegate.swift */,
 				C769DE9B2185C20F005B5F40 /* ViewController.swift */,
+				C769DECA2185D034005B5F40 /* PaddingLabel.swift */,
 				C769DE9D2185C20F005B5F40 /* Main.storyboard */,
 				C769DEA32185C210005B5F40 /* Assets.xcassets */,
 				C769DEA52185C210005B5F40 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C769DECB2185D034005B5F40 /* PaddingLabel.swift in Sources */,
 				C769DEA22185C20F005B5F40 /* Postfix_Rechner.xcdatamodeld in Sources */,
 				C769DE9C2185C20F005B5F40 /* ViewController.swift in Sources */,
 				C769DE9A2185C20F005B5F40 /* AppDelegate.swift in Sources */,
